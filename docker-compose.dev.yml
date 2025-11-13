@@ -1,0 +1,82 @@
+# Development docker-compose with hot-reload
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: system-monitor-db-dev
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: system_monitor
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_dev_data:/var/lib/postgresql/data
+      - ./lib/scripts.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - system-monitor-dev
+
+  redis:
+    image: redis:7-alpine
+    container_name: system-monitor-redis-dev
+    ports:
+      - "6379:6379"
+    networks:
+      - system-monitor-dev
+
+volumes:
+  postgres_dev_data:
+    driver: local
+
+networks:
+  system-monitor-dev:
+    driver: bridge
+# syntax=docker/dockerfile:1
+
+# Base stage
+FROM node:20-alpine AS base
+WORKDIR /app
+RUN corepack enable pnpm
+
+# Dependencies stage
+FROM base AS deps
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
+
+# Builder stage
+FROM base AS builder
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+
+# Set build-time environment variables
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV=production
+
+# Build the application
+RUN pnpm build
+
+# Production stage
+FROM base AS runner
+
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# Create non-root user
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 nextjs
+
+# Copy necessary files
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+USER nextjs
+
+EXPOSE 3000
+
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
+
+CMD ["node", "server.js"]
+
