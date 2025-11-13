@@ -45,8 +45,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       geist:
-        specifier: ^1.4.2
-        version: 1.4.2(next@15.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
+        specifier: ^1.5.1
+        version: 1.5.1(next@15.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
       ioredis:
         specifier: ^5.7.0
         version: 5.7.0
@@ -957,8 +957,8 @@ packages:
     resolution: {integrity: sha512-d4lC8xfavMeBjzGr2vECC3fsGXziXZQyJxD868h2M/mBI3PwAuODxAkLkq5HYuvrPYcUtiLzsTo8U3PgX3Ocww==}
     engines: {node: '>=10.13.0'}
 
-  geist@1.4.2:
-    resolution: {integrity: sha512-OQUga/KUc8ueijck6EbtT07L4tZ5+TZgjw8PyWfxo16sL5FWk7gNViPNU8hgCFjy6bJi9yuTP+CRpywzaGN8zw==}
+  geist@1.5.1:
+    resolution: {integrity: sha512-mAHZxIsL2o3ZITFaBVFBnwyDOw+zNLYum6A6nIjpzCGIO8QtC3V76XF2RnZTyLx1wlDTmMDy8jg3Ib52MIjGvQ==}
     peerDependencies:
       next: '>=13.2.0'
 
@@ -2036,7 +2036,7 @@ snapshots:
       graceful-fs: 4.2.11
       tapable: 2.2.3
 
-  geist@1.4.2(next@15.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)):
+  geist@1.5.1(next@15.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)):
     dependencies:
       next: 15.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
 
