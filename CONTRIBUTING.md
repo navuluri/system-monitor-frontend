@@ -39,13 +39,13 @@ This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.
 
 2. **Clone your fork:**
    ```bash
-   git clone https://github.com/navuluri/system-monitor.git
-   cd system-monitor
+   git clone https://github.com/navuluri/system-monitor-frontend.git
+   cd system-monitor-frontend
    ```
 
 3. **Add upstream remote:**
    ```bash
-   git remote add upstream https://github.com/original-owner/system-monitor.git
+   git remote add upstream https://github.com/original-owner/system-monitor-frontend.git
    ```
 
 4. **Install dependencies:**
@@ -428,7 +428,7 @@ export async function fetchSystemMetrics(
 
 ## 🤔 Questions?
 
-- 💬 Open a [Discussion](https://github.com/navuluri/system-monitor/discussions)
+- 💬 Open a [Discussion](https://github.com/navuluri/system-monitor-frontend/discussions)
 - 📧 Email: dev@example.com
 - 💻 Join our Discord: [Link]
 

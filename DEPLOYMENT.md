@@ -84,8 +84,8 @@ openssl rand -base64 32
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/navuluri/system-monitor.git
-   cd system-monitor
+   git clone https://github.com/navuluri/system-monitor-frontend.git
+   cd system-monitor-frontend
    ```
 
 2. **Create environment file:**

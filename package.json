@@ -22,12 +22,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/navuluri/system-monitor.git"
+    "url": "https://github.com/navuluri/system-monitor-frontend.git"
   },
   "bugs": {
-    "url": "https://github.com/navuluri/system-monitor/issues"
+    "url": "https://github.com/navuluri/system-monitor-frontend/issues"
   },
-  "homepage": "https://github.com/navuluri/system-monitor#readme",
+  "homepage": "https://github.com/navuluri/system-monitor-frontend#readme",
   "engines": {
     "node": ">=20.0.0",
     "pnpm": ">=8.0.0"

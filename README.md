@@ -22,9 +22,9 @@ A modern, real-time system monitoring dashboard built with Next.js, React, and T
 ![Dark Mode](/images/dark.png)
 
 ---
-## Pre-Requisites
+## Pre-Requisites (IMPORTANT & MANDATORY)
 
-- Install the backend as a service on target servers to expose system metrics via REST API. See the [Backend Agent Setup](#backend-agent-setup) section for details.
+- Install the backend as a service on target servers to expose system metrics via REST API. See the [Backend Agent Setup](https://github.com/navuluri/system-monitor-backend/blob/main/README.md) section for details.
 
 ## Features
 
@@ -61,8 +61,8 @@ The dashboard communicates with backend agents via REST API to collect system me
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/navuluri/system-monitor.git
-   cd system-monitor
+   git clone https://github.com/navuluri/system-monitor-frontend.git
+   cd system-monitor-frontend
    ```
 
 2. **Install dependencies**
@@ -253,9 +253,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-- Email: bhaskara[dot]navuluri[at]gmail.com
-- Issues: [GitHub Issues](https://github.com/navuluri/system-monitor/issues)
-- Discussions: [GitHub Discussions](https://github.com/navuluri/system-monitor/discussions)
+- Email: bhaskara[dot]navuluri[at]gmail[dot]com
+- Issues: [GitHub Issues](https://github.com/navuluri/system-monitor-frontend/issues)
+- Discussions: [GitHub Discussions](https://github.com/navuluri/system-monitor-frontend/discussions)
 
 ## Roadmap
 
